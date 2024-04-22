@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Type-annotated function to_kv that
 takes a string and an int/float v as

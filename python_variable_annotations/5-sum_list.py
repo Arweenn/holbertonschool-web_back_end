@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Type-annotated function sum_list
 that takes a list of floats and returns
