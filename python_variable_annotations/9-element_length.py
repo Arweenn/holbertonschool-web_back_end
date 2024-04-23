@@ -4,10 +4,10 @@ Annotates the parameters of the
 function below.
 """
 
-from typing import Iterable, Sequence, Tuple, List
+from typing import List, Iterable, Sequence, Tuple
 
 
-def element_length(lst: Iterable[Sequence]) -> Listist[Tuple[Sequence, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """Annotates the parameters of a given function"""
 
     return [(i, len(i)) for i in lst]
