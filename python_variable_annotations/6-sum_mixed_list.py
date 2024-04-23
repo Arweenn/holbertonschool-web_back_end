@@ -5,7 +5,7 @@ takes a list mxd_lst of int and floats and
 returns their sum as a float.
 """
 
-from typing import Union, List
+from typing import List, Union
 
 
 def sum_mixed_list(mxd_list: List[Union[int, float]]) -> float:
