@@ -11,7 +11,4 @@ from typing import List, Union
 def sum_mixed_list(mxd_list: List[Union[int, float]]) -> float:
     """Returns sum of ints and floats as a float."""
 
-    sum = 0.0
-    for input in mxd_list:
-        sum += input
-    return sum
+    return (sum(mxd_list))
