@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env/python3
 """
 Annotates the parameters of the
 function below.
