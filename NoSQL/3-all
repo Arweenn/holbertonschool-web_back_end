@@ -1,4 +1,2 @@
 // Script that lists all documents in the collection "school".
-show dbs
-use <school>
-show collections
+db.school.find().forEach(printjson);
