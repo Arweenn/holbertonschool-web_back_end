@@ -1,1 +1,8 @@
 *.pyc
+NoSQL/dump/logs/nginx.bson
+NoSQL/dump/logs/nginx.metadata.json
+NoSQL/8-main.py
+NoSQL/9-main.py
+NoSQL/10-main.py
+NoSQL/11-main.py
+NoSQL/dump.zip
