@@ -26,7 +26,7 @@ class LRUCache(BaseCaching):
 
         if key in self.queue:
             self.queue.remove(key)
-            self.queue.append(key)
+        self.queue.append(key)
 
     def get(self, key):
         """ Gets item from cache """
