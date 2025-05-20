@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """ Module for testing client """
 
-import json
 import unittest
-from unittest.mock import Mock, PropertyMock, patch
-
+from unittest.mock import PropertyMock, patch
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
 from parameterized import parameterized, parameterized_class
@@ -78,12 +76,6 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """A class method called before tests in an individual class are run"""
-        # def my_side_effect(url):
-        #     """ Side Effect function for test """
-        #     test_url = "https://api.github.com/orgs/google"
-        #     if url == test_url:
-        #         return cls.org_payload
-        #     return cls.repos_payload
 
         config = {'return_value.json.side_effect':
                   [
