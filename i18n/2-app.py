@@ -7,7 +7,6 @@ from flask import Flask, render_template, request
 from flask_babel import Babel
 
 app = Flask(__name__)
-babel = Babel(app)
 
 
 class Config(object):
@@ -22,12 +21,14 @@ class Config(object):
 app.config.from_object("1-app.Config")
 
 
-@babel.localeselector
 def get_locale():
     """
     Get the current locale
     """
     return request.accept_languages.best_match(app.config["LANGUAGES"])
+
+
+babel = Babel(app, locale_selector=get_locale)
 
 
 @app.route("/")
