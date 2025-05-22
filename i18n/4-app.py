@@ -17,10 +17,9 @@ class Config(object):
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
-    BABEL_TRANSLATION_DIRECTORIES = "translations"
 
 
-app.config.from_object("3-app.Config")
+app.config.from_object(Config)
 
 
 @app.route("/")
@@ -28,7 +27,7 @@ def index():
     """
     function that render index.html template
     """
-    return render_template("3-index.html")
+    return render_template("4-index.html")
 
 
 @babel.localeselector
