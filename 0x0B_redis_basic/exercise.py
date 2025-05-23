@@ -6,6 +6,7 @@ Writing strings to Redis
 from uuid import uuid4
 from typing import Union, Optional, Callable
 import redis
+from functools import wraps
 
 
 def call_history(method):
@@ -15,10 +16,18 @@ def call_history(method):
     return wrapper
 
 
-def count_calls(method):
-    """count_calls decorator"""
-    def wrapper(*args, **kwargs):
-        return method(*args, **kwargs)
+def count_calls(method: Callable) -> Callable:
+    """ Decorator for counting how many times a function
+    has been called """
+
+    key = method.__qualname__
+
+    @wraps(method)
+    def wrapper(self, *args, **kwargs):
+        """ Wrapper for decorator functionality """
+        self._redis.incr(key)
+        return method(self, *args, **kwargs)
+
     return wrapper
 
 
