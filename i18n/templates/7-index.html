@@ -1,0 +1,8 @@
+<html>
+  <title>{{ _('%(home_title)') }}</title>
+  <h1>{{ _('%(home_header)') }}</h1>
+  <p>
+    {% if user %} {{ _('%(logged_in_as)', username=user.name) }} {% else %} {{
+    _('%(not_logged_in)') }} {% endif %}
+  </p>
+</html>
