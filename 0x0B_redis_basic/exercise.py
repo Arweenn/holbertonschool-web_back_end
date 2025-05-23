@@ -9,10 +9,25 @@ import redis
 from functools import wraps
 
 
-def call_history(method):
-    """call_history decorator"""
-    def wrapper(*args, **kwargs):
-        return method(*args, **kwargs)
+def call_history(method: Callable) -> Callable:
+    """
+    store the history of inputs and
+    outputs for a particular function.
+    """
+
+    @wraps(method)
+    def wrapper(self, *args, **kwargs):
+        """
+        Wrapper for decorator functionality
+        """
+        input = str(args)
+        self._redis.rpush(method.__qualname__ + ":inputs", input)
+
+        output = str(method(self, *args, **kwargs))
+        self._redis.rpush(method.__qualname__ + ":outputs", output)
+
+        return output
+
     return wrapper
 
 
